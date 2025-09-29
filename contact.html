@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto - Reinforcement Learning Hub</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../CSS/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -38,92 +38,46 @@
                     <h2>Formulario de Contacto</h2>
                     <p>Completa el siguiente formulario y nos pondremos en contacto contigo a la brevedad.</p>
                     
-                    <?php
-                    $errors = [];
-                    $success = "";
+                    <!-- Los mensajes de éxito/error se mostrarán después del envío -->
+                    <div id="form-messages"></div>
 
-                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                        $name = trim($_POST["name"]);
-                        $email = trim($_POST["email"]);
-                        $subject = trim($_POST["subject"]);
-                        $message = trim($_POST["message"]);
-                        $interest = isset($_POST["interest"]) ? $_POST["interest"] : [];
-
-                        // Validaciones básicas
-                        if (empty($name)) 
-                            {$errors[] = "El nombre es obligatorio.";
-                        } elseif (!preg_match("/^[a-zA-ZÀ-ÿ\s]+$/u", $name)) 
-                            {$errors[] = "El nombre solo puede contener letras y espacios.";
-                        }
-
-                        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) $errors[] = "Email inválido.";
-                        if (empty($subject)) $errors[] = "El asunto es obligatorio.";
-                        if (strlen($message) < 10) $errors[] = "El mensaje debe tener al menos 10 caracteres.";
-                        if (empty($interest)) $errors[] = "Selecciona al menos un área de interés.";
-
-                        if (empty($errors)) {
-                            $data = "Nombre: $name | Email: $email | Asunto: $subject | Intereses: " . implode(", ", $interest) . " | Mensaje: $message\n";
-                            file_put_contents("data.txt", $data, FILE_APPEND);
-                            $success = "¡Mensaje enviado correctamente! Te contactaremos pronto.";
-                            // Limpiar campos
-                            $name = $email = $subject = $message = "";
-                            $interest = [];
-                        }
-                    }
-                    ?>
-
-                    <?php if(!empty($errors)) : ?>
-                        <div class="alert alert-error">
-                            <h4>Por favor, corrige los siguientes errores:</h4>
-                            <ul>
-                                <?php foreach($errors as $error) echo "<li>$error</li>"; ?>
-                            </ul>
-                        </div>
-                    <?php endif; ?>
-
-                    <?php if($success) : ?>
-                        <div class="alert alert-success">
-                            <?php echo $success; ?>
-                        </div>
-                    <?php endif; ?>
-
-                    <form method="post" action="" class="contact-form">
+                    <form method="post" action="process_contact.php" class="contact-form">
                         <div class="form-group">
                             <label for="name">Nombre completo *</label>
-                            <input type="text" id="name" name="name" value="<?php echo $name ?? ''; ?>" required>
+                            <input type="text" id="name" name="name" required>
                         </div>
 
                         <div class="form-group">
                             <label for="email">Correo electrónico *</label>
-                            <input type="email" id="email" name="email" value="<?php echo $email ?? ''; ?>" required>
+                            <input type="email" id="email" name="email" required>
                         </div>
 
                         <div class="form-group">
                             <label for="subject">Asunto *</label>
-                            <input type="text" id="subject" name="subject" value="<?php echo $subject ?? ''; ?>" required>
+                            <input type="text" id="subject" name="subject" required>
                         </div>
 
                         <div class="form-group">
                             <label>Áreas de interés *</label>
                             <div class="checkbox-group">
                                 <label class="checkbox-label">
-                                    <input type="checkbox" name="interest[]" value="teoria" <?php echo (isset($interest) && in_array('teoria', $interest)) ? 'checked' : ''; ?>>
+                                    <input type="checkbox" name="interest[]" value="teoria">
                                     <span>Fundamentos teóricos</span>
                                 </label>
                                 <label class="checkbox-label">
-                                    <input type="checkbox" name="interest[]" value="aplicaciones" <?php echo (isset($interest) && in_array('aplicaciones', $interest)) ? 'checked' : ''; ?>>
+                                    <input type="checkbox" name="interest[]" value="aplicaciones">
                                     <span>Aplicaciones prácticas</span>
                                 </label>
                                 <label class="checkbox-label">
-                                    <input type="checkbox" name="interest[]" value="investigacion" <?php echo (isset($interest) && in_array('investigacion', $interest)) ? 'checked' : ''; ?>>
+                                    <input type="checkbox" name="interest[]" value="investigacion">
                                     <span>Investigación académica</span>
                                 </label>
                                 <label class="checkbox-label">
-                                    <input type="checkbox" name="interest[]" value="implementacion" <?php echo (isset($interest) && in_array('implementacion', $interest)) ? 'checked' : ''; ?>>
+                                    <input type="checkbox" name="interest[]" value="implementacion">
                                     <span>Implementación técnica</span>
                                 </label>
                                 <label class="checkbox-label">
-                                    <input type="checkbox" name="interest[]" value="cursos" <?php echo (isset($interest) && in_array('cursos', $interest)) ? 'checked' : ''; ?>>
+                                    <input type="checkbox" name="interest[]" value="cursos">
                                     <span>Cursos y formación</span>
                                 </label>
                             </div>
@@ -131,7 +85,7 @@
 
                         <div class="form-group">
                             <label for="message">Mensaje *</label>
-                            <textarea id="message" name="message" rows="6" required><?php echo $message ?? ''; ?></textarea>
+                            <textarea id="message" name="message" rows="6" required></textarea>
                         </div>
 
                         <button type="submit" class="btn-primary">Enviar mensaje</button>
@@ -264,6 +218,32 @@
             </div>
         </div>
     </footer>
-</body>
 
+    <!-- JavaScript simple para mostrar parámetros URL -->
+    <script>
+        // Mostrar mensajes de éxito/error desde la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const success = urlParams.get('success');
+        const error = urlParams.get('error');
+        
+        const messagesContainer = document.getElementById('form-messages');
+        
+        if (success) {
+            messagesContainer.innerHTML = `
+                <div class="alert alert-success">
+                    ${decodeURIComponent(success)}
+                </div>
+            `;
+        }
+        
+        if (error) {
+            messagesContainer.innerHTML = `
+                <div class="alert alert-error">
+                    <h4>Error:</h4>
+                    <p>${decodeURIComponent(error)}</p>
+                </div>
+            `;
+        }
+    </script>
+</body>
 </html>
