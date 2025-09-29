@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reinforcement Learning Hub - Inicio</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <div class="logo">
+                    <span class="logo-icon">🤖</span>
+                    <span class="logo-text">RL Hub</span>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.php" class="active">Inicio</a></li>
+                    <li><a href="about.php">Acerca de</a></li>
+                    <li><a href="contact.php">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1>Reinforcement Learning Hub</h1>
+            <p>Explora el fascinante mundo del aprendizaje por refuerzo, donde las máquinas aprenden a tomar decisiones óptimas a través de la experiencia</p>
+        </section>
+
+        <div class="content-wrapper">
+            <div class="main-content">
+                <article class="card">
+                    <h2>¿Qué es el Aprendizaje por Refuerzo?</h2>
+                    <p>El <strong>Aprendizaje por Refuerzo (Reinforcement Learning)</strong> es un paradigma de aprendizaje automático donde un agente aprende a tomar decisiones mediante la interacción con un entorno. A diferencia del aprendizaje supervisado, no requiere un conjunto de datos etiquetados, sino que el agente aprende a través del método de prueba y error, maximizando una recompensa acumulativa a lo largo del tiempo.</p>
+                    
+                    <h3>Componentes fundamentales del RL</h3>
+                    <ul>
+                        <li><strong>Agente:</strong> Entidad que toma decisiones y aprende</li>
+                        <li><strong>Entorno:</strong> Mundo con el que interactúa el agente</li>
+                        <li><strong>Acciones:</strong> Conjunto de posibles decisiones del agente</li>
+                        <li><strong>Estado:</strong> Situación actual del entorno</li>
+                        <li><strong>Recompensa:</strong> Señal numérica que indica el éxito de una acción</li>
+                        <li><strong>Política:</strong> Estrategia que determina qué acción tomar en cada estado</li>
+                    </ul>
+                    
+                    <h3>El dilema de exploración vs explotación</h3>
+                    <p>Uno de los conceptos más importantes en RL es el equilibrio entre explorar nuevas acciones para descubrir mejores recompensas y explotar acciones que ya sabemos que funcionan bien. Este dilema fundamental afecta cómo los agentes aprenden y optimizan su comportamiento a largo plazo.</p>
+                </article>
+
+                <article class="card">
+                    <h2>Aplicaciones del Reinforcement Learning</h2>
+                    <p>El RL ha demostrado ser extremadamente versátil y se aplica en diversos campos:</p>
+                    
+                    <div class="applications-grid">
+                        <div class="application-item">
+                            <h4>🚗 Vehículos Autónomos</h4>
+                            <p>Los algoritmos de RL permiten a los coches autónomos aprender comportamientos complejos de conducción y navegación.</p>
+                        </div>
+                        <div class="application-item">
+                            <h4>🎮 Videojuegos</h4>
+                            <p>Desde AlphaGo hasta agentes que juegan Dota 2, el RL ha logrado superar a humanos en juegos complejos.</p>
+                        </div>
+                        <div class="application-item">
+                            <h4>🏥 Medicina</h4>
+                            <p>En tratamientos personalizados y descubrimiento de fármacos, el RL optimiza protocolos médicos.</p>
+                        </div>
+                        <div class="application-item">
+                            <h4>🤖 Robótica</h4>
+                            <p>Los robots aprenden tareas complejas como caminar, agarrar objetos y navegar en entornos desconocidos.</p>
+                        </div>
+                        <div class="application-item">
+                            <h4>📈 Finanzas</h4>
+                            <p>Optimización de carteras de inversión y desarrollo de estrategias de trading automatizadas.</p>
+                        </div>
+                        <div class="application-item">
+                            <h4>🔧 Sistemas de Recomendación</h4>
+                            <p>Plataformas como Netflix y Amazon utilizan RL para personalizar recomendaciones y mejorar la experiencia del usuario.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <h2>Algoritmos Principales de RL</h2>
+                    <p>Existen diversos algoritmos en RL, cada uno con sus fortalezas y aplicaciones específicas:</p>
+                    
+                    <h3>Métodos basados en valor</h3>
+                    <ul>
+                        <li><strong>Q-Learning:</strong> Algoritmo sin modelo que aprende la función de valor acción-estado</li>
+                        <li><strong>SARSA:</strong> Similar a Q-Learning pero sigue una política específica durante el aprendizaje</li>
+                        <li><strong>Deep Q-Network (DQN):</strong> Combina Q-Learning con redes neuronales profundas</li>
+                    </ul>
+                    
+                    <h3>Métodos basados en política</h3>
+                    <ul>
+                        <li><strong>REINFORCE:</strong> Algoritmo de gradiente de política que optimiza directamente la política</li>
+                        <li><strong>Proximal Policy Optimization (PPO):</strong> Método estable que evita cambios bruscos en la política</li>
+                    </ul>
+                    
+                    <h3>Métodos Actor-Crítico</h3>
+                    <ul>
+                        <li><strong>A2C/A3C:</strong> Combina ventajas de métodos basados en valor y política</li>
+                        <li><strong>Soft Actor-Critic (SAC):</strong> Incorpora maximización de entropía para una exploración más eficiente</li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <h2>Recursos Recomendados</h2>
+                    <p>Para profundizar en el aprendizaje por refuerzo, te recomendamos estos recursos:</p>
+                    
+                    <div class="resources-list">
+                        <div class="resource-item">
+                            <h4>📚 Libros Fundamentales</h4>
+                            <ul>
+                                <li><a href="http://incompleteideas.net/book/the-book-2nd.html" target="_blank">"Reinforcement Learning: An Introduction" - Sutton & Barto</a></li>
+                                <li><a href="https://www.manning.com/books/grokking-deep-reinforcement-learning" target="_blank">"Grokking Deep Reinforcement Learning" - Miguel Morales</a></li>
+                                <li><a href="https://www.oreilly.com/library/view/deep-reinforcement-learning/9780135172384/" target="_blank">"Deep Reinforcement Learning Hands-On" - Maxim Lapan</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="resource-item">
+                            <h4>🎓 Cursos Online</h4>
+                            <ul>
+                                <li><a href="https://www.coursera.org/specializations/reinforcement-learning" target="_blank">Especialización en RL - Universidad de Alberta (Coursera)</a></li>
+                                <li><a href="https://www.udacity.com/course/reinforcement-learning--ud600" target="_blank">Reinforcement Learning - Georgia Tech (Udacity)</a></li>
+                                <li><a href="https://deepmind.com/learning-resources/-introduction-reinforcement-learning-david-silver" target="_blank">Introduction to RL - David Silver (DeepMind)</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="resource-item">
+                            <h4>🔬 Investigación y Noticias</h4>
+                            <ul>
+                                <li><a href="https://www.deepmind.com/research/highlighted-research/reinforcement-learning" target="_blank">DeepMind Reinforcement Learning Research</a></li>
+                                <li><a href="https://openai.com/research/" target="_blank">OpenAI Research</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <h2>Video Introductorio sobre Reinforcement Learning</h2>
+                    <div class="video-container">
+                        <iframe width="100%" height="400" src="https://www.youtube.com/embed/JgvyzIkgxF0" title="Introduction to Reinforcement Learning" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <p class="video-caption">Este video de DeepMind explica los conceptos fundamentales del aprendizaje por refuerzo y sus aplicaciones más destacadas.</p>
+                </article>
+            </div>
+
+            <aside class="sidebar">
+                <div class="card">
+                    <h3>Noticias Recientes</h3>
+                    <div class="news-item">
+                        <h4>AlphaFold 3 revoluciona la biología</h4>
+                        <p>DeepMind ha presentado AlphaFold 3, que utiliza técnicas avanzadas de RL para predecir la estructura de proteínas con una precisión sin precedentes.</p>
+                        <span class="news-date">Mayo 2024</span>
+                    </div>
+                    <div class="news-item">
+                        <h4>OpenAI presenta Sora</h4>
+                        <p>El nuevo modelo de generación de video utiliza RL para mejorar la coherencia temporal y la calidad de los videos generados.</p>
+                        <span class="news-date">Febrero 2024</span>
+                    </div>
+                    <div class="news-item">
+                        <h4>Avances en RL multiagente</h4>
+                        <p>Investigadores desarrollan nuevos algoritmos que permiten a múltiples agentes colaborar y competir en entornos complejos.</p>
+                        <span class="news-date">Enero 2024</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Eventos Próximos</h3>
+                    <div class="event-item">
+                        <h4>Conferencia NeurIPS 2024</h4>
+                        <p>9-15 Diciembre 2024</p>
+                        <p>Vancouver, Canadá</p>
+                    </div>
+                    <div class="event-item">
+                        <h4>ICLR 2024</h4>
+                        <p>7-11 Mayo 2024</p>
+                        <p>Viena, Austria</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Enlaces Externos</h3>
+                    <ul class="external-links">
+                        <li><a href="https://www.deepmind.com/research/highlighted-research/reinforcement-learning" target="_blank">DeepMind RL Research</a></li>
+                        <li><a href="https://openai.com/research/" target="_blank">OpenAI Research</a></li>
+                        <li><a href="https://rllab.readthedocs.io/en/latest/" target="_blank">rllab - Framework de RL</a></li>
+                        <li><a href="https://gym.openai.com/" target="_blank">OpenAI Gym</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <span class="logo-icon">🤖</span>
+                        <span class="logo-text">RL Hub</span>
+                    </div>
+                    <p>Explorando el futuro del aprendizaje automático a través del reinforcement learning.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="index.php">Inicio</a></li>
+                        <li><a href="about.php">Acerca de</a></li>
+                        <li><a href="contact.php">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="https://twitter.com/" target="_blank" aria-label="Twitter">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723 10.016 10.016 0 01-3.127 1.195 4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.937 4.937 0 004.604 3.417 9.868 9.868 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63a9.936 9.936 0 002.46-2.543l-.047-.02z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Reinforcement Learning Hub. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
